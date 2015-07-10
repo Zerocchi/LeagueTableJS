@@ -1,0 +1,33 @@
+<head>
+  <title>League Table</title>
+</head>
+
+<body>
+<center>
+  <h1>League Table</h1>
+
+  {{> league}}
+  {{> control}}
+</center>
+</body>
+
+<template name="league">
+  <table border=1>
+  	<tr><td>Team</td><td>Points</td></tr>
+  	{{#each team}}
+  		<tr class="teamRow {{selected}}"><td>{{name}}</td><td>{{point}}</td></tr>
+  	{{/each}}
+  </table>
+  <br />
+  <input type="button" class="win" value="Win">
+  <input type="button" class="draw" value="Draw">
+  <input type="button" class="reset" value="Reset">
+  <input type="button" class="delete" value="Delete Team">
+</template>
+
+<template name="control">
+	<form>
+		<input type="text" name="inputTeam" placeholder="Add team">
+		<input type="submit" value="Add!">
+	</form>
+</template>
